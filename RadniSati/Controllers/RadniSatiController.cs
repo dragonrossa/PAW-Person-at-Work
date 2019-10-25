@@ -21,7 +21,6 @@ namespace RadniSati.Controllers
         public ActionResult IspisSati(FormCollection form)
         {
             
-
             ViewBag.ulazak = form["Ulazak"];
             ViewBag.izlazak = form["Izlazak"];
             DateTime date1 = DateTime.ParseExact(ViewBag.ulazak, "dd'.'MM'.'yyyy - HH:mm:ss", null);
@@ -31,7 +30,10 @@ namespace RadniSati.Controllers
             TimeSpan interval = date2 - date1;
             ViewBag.interval = interval;
             //Debug.WriteLine(interval);
-           
+            TimeSpan span = new TimeSpan(08, 00, 00);
+            TimeSpan visak = interval - span;
+            ViewBag.visak = visak;
+            //Debug.WriteLine(visak);
 
             return View();
         }
