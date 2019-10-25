@@ -16,7 +16,7 @@ namespace RadniSati
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "RadniSati", action = "UnosSati", id = UrlParameter.Optional }
+                defaults: new { controller = "RadniSati", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

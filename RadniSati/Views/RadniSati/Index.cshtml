@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    p{
+        margin:10px 0px 10px 0px;
+    }
+    button {
+        margin: 10px 0px 10px 0px;
+    }
+</style>
+
+
+
+
+@using (Html.BeginForm("UnosSati","RadniSati", FormMethod.Post))
+{ 
+
+<div class="container">
+
+    <h2>Prijava zaposlenika</h2>
+    <p>
+        Username:
+    </p>
+    <input type="text" id="Username" name="Username"/>
+    <p>
+        Password:
+    </p>
+    <input type="password" id="Password" name="Password" />
+
+    <br />
+    <button type="submit" value="Login">Login</button>
+
+</div>
+
+}
