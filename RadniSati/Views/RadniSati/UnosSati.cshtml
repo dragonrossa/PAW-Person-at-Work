@@ -1,0 +1,186 @@
+﻿@model RadniSati.Models.Sati
+
+
+
+@{
+    ViewBag.Title = "UnosSati";
+    string danas = DateTime.Now.ToString("dd'.'MM'.'yyyy - HH:mm:ss");
+    string dan = DateTime.Now.ToString("dd'.'MM'.'yyyy");
+    ViewBag.dan = dan;
+    ViewBag.danas = danas;
+    ViewBag.kraj = DateTime.Now.AddHours(8).ToString("dd'.'MM'.'yyyy - HH:mm:ss");
+    string mjesec = DateTime.Now.Month.ToString("d2");
+
+
+
+
+    if (mjesec == "1")
+    {
+        ViewBag.mjesec = "siječanj";
+
+    }
+
+    else if (mjesec == "2")
+    {
+        ViewBag.mjesec = "veljača";
+
+    }
+
+    else if (mjesec == "3")
+    {
+        ViewBag.mjesec = "ožujak";
+
+    }
+
+    else if (mjesec == "4")
+    {
+        ViewBag.mjesec = "travanj";
+
+    }
+
+    else if (mjesec == "5")
+    {
+        ViewBag.mjesec = "svibanj";
+
+    }
+
+    else if (mjesec == "6")
+    {
+        ViewBag.mjesec = "lipanj";
+
+    }
+
+    else if (mjesec == "7")
+    {
+        ViewBag.mjesec = "srpanj";
+
+    }
+
+    else if (mjesec == "8")
+    {
+        ViewBag.mjesec = "kolovoz";
+
+    }
+
+    else if (mjesec == "9")
+    {
+        ViewBag.mjesec = "rujan";
+
+    }
+
+    else if (mjesec == "10") {
+        ViewBag.mjesec = "listopad";
+
+    }
+
+    else if (mjesec == "11")
+    {
+        ViewBag.mjesec = "studeni";
+
+    }
+
+    else if (mjesec == "12")
+    {
+        ViewBag.mjesec = "prosinac";
+
+    }
+
+    else
+    {
+        ViewBag.mjesec = "unknown month";
+    }
+
+
+}
+
+
+
+<style>
+    p{
+        margin:10px 0px 10px 0px;
+    }
+</style>
+
+
+<div style="margin:30px">
+    <h2>Radni sati - app</h2>
+    <br />
+
+
+
+    <div>
+        <label>
+            Pozdrav!
+        </label>
+        <br />
+        <p>U evidenciju radnih sati upisujes kada si dosao/la na posao.</p>
+        <p> Cilj je lakše praćenje te planiranje i korištenje slobodnih sati</p>
+        <p> Svaka minuta je bitna te se kasnije moze zamijeniti ili iskoristiti za raniji odlazak s posla.</p>
+       <br />
+        <label>
+            Datum: @ViewBag.dan
+        </label>
+        <br />
+        <label>
+           Mjesec: @ViewBag.mjesec
+        </label>
+    </div>
+
+    <br />
+
+    <div>
+        <p>Upiši svoje radne sate za današnji dan</p>
+    </div>
+
+
+</div>
+
+
+
+@using (Html.BeginForm("IspisSati","RadniSati", FormMethod.Post)){
+
+<div style="margin:30px">
+
+    <div>
+        <label>
+
+           Početak
+        </label>
+    </div>
+    <div>
+        <label>
+
+            <input type="datetime" value="@ViewBag.danas" name="Ulazak" id="Ulazak" />
+        
+
+        </label>
+    </div>
+    <div>
+        <label>
+
+
+          Kraj
+        </label>
+    </div>
+
+    <div>
+
+        <label>
+            <input type="datetime" value="@ViewBag.kraj" name="Izlazak" id="Izlazak" />
+        
+        </label>
+    </div>
+
+    <br />
+
+
+    <div>
+        <button type="submit">Upisi</button>
+      
+    </div>
+
+</div>
+
+
+
+}

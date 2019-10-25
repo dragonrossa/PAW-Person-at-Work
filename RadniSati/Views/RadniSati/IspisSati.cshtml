@@ -1,0 +1,62 @@
+﻿@model RadniSati.Models.Sati
+
+
+@{
+    ViewBag.Title = "IspisSati";
+
+    //DateTime max = '08:00:00';
+
+    //string iString = "08:00:00";
+    //DateTime oDate = DateTime.ParseExact(iString, "HH:mm:ss", null);
+    TimeSpan span = new TimeSpan(08, 00, 00);
+    //MessageBox.Show(oDate.ToString());
+
+    if (ViewBag.interval > span)
+    {
+        ViewBag.interval_info = "Imamo visak";
+    }
+    else
+    {
+        ViewBag.interval_info = "Imamo manjak";
+    }
+}
+
+
+<style>
+    label {
+        margin: 10px 30px 10px 30px;
+        font-weight: normal !important;
+    }
+    h2{
+        margin:30px;
+    }
+</style>
+
+
+<div class="container">
+    <h2>Ispis radnih sati</h2>
+    <label>
+        <b>  Ukupan broj sati</b>
+    </label>
+
+    <br />
+    <label>
+        Ušao si u  @ViewBag.ulazak h.
+    </label>
+    <br />
+    <label>
+        Izašao si u  @ViewBag.izlazak h.
+    </label>
+    <br />
+    <label>
+        Razlika je @ViewBag.interval h.
+    </label>
+    <br />
+    <label>
+        <b> Info </b> - @ViewBag.interval_info
+    </label>
+    <br />
+    <label >
+        @Html.ActionLink("Povratak", "UnosSati")
+    </label>
+</div>
