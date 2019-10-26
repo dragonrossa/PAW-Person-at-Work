@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace RadniSati.Controllers
 {
@@ -46,7 +47,7 @@ namespace RadniSati.Controllers
             cnn = new SqlConnection(connectionString: RadniSati.ConnectionString);
             cnn.Open();
             
-            SqlCommand command = new SqlCommand("  IF EXISTS (SELECT * FROM dbo.Login WHERE Username = @username AND Password=@password) SELECT 1 ELSE SELECT 2", cnn);
+            SqlCommand command = new SqlCommand("IF EXISTS (SELECT * FROM dbo.Login WHERE Username = @username AND Password=@password) SELECT 1 ELSE SELECT 2", cnn);
             
             command.Parameters.AddWithValue("@username", username);
             command.Parameters.AddWithValue("@password", password);
@@ -87,11 +88,29 @@ namespace RadniSati.Controllers
         public ActionResult IspisSati(FormCollection form)
         {
             
-            ViewBag.ulazak = form["Ulazak"];
-            ViewBag.izlazak = form["Izlazak"];
-            DateTime date1 = DateTime.ParseExact(ViewBag.ulazak, "dd'.'MM'.'yyyy - HH:mm:ss", null);
-            DateTime date2 = DateTime.ParseExact(ViewBag.izlazak, "dd'.'MM'.'yyyy - HH:mm:ss", null);
-            TimeSpan interval = date2 - date1;
+            ViewBag.ulaz = form["Ulazak"];
+            ViewBag.izlaz = form["Izlazak"];
+
+
+            DateTime date1 = DateTime.ParseExact(ViewBag.ulaz, "yyyy'-'MM'-'dd'T'HH':'mm':'ss", null);
+            DateTime date2 = DateTime.ParseExact(ViewBag.izlaz, "yyyy'-'MM'-'dd'T'HH':'mm':'ss", null);
+
+            
+            var usCulture = new CultureInfo("en-US");
+            var date3 = date1;
+            var date4 = date2;
+            var gmt1Date = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(date3, "W. Europe Standard Time");
+            var gmt2Date = TimeZoneInfo.ConvertTimeBySystemTimeZoneId(date4, "W. Europe Standard Time");
+            var str1 = gmt1Date.ToString("dd MMM yyyy HH:mm:ss", usCulture);
+            var str2 = gmt2Date.ToString("dd MMM yyyy HH:mm:ss", usCulture);
+
+            Debug.WriteLine(str1);
+            Debug.WriteLine(str2);
+
+            ViewBag.ulazak = str1;
+            ViewBag.izlazak = str2;
+          
+            TimeSpan interval = date4 - date3;
             ViewBag.interval = interval;
             TimeSpan span = new TimeSpan(08, 00, 00);
             TimeSpan visak = interval - span;

@@ -4,11 +4,16 @@
 
 @{
     ViewBag.Title = "UnosSati";
-    string danas = DateTime.Now.ToString("dd'.'MM'.'yyyy - HH:mm:ss");
+    //string danas = DateTime.Now.ToString("dd'.'MM'.'yyyy - HH:mm:ss");
+
+    string danas = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss");
+
+
     string dan = DateTime.Now.ToString("dd'.'MM'.'yyyy");
     ViewBag.dan = dan;
     ViewBag.danas = danas;
-    ViewBag.kraj = DateTime.Now.AddHours(8).ToString("dd'.'MM'.'yyyy - HH:mm:ss");
+    //ViewBag.kraj = DateTime.Now.AddHours(8).ToString("dd'.'MM'.'yyyy - HH:mm:ss");
+    ViewBag.kraj = DateTime.Now.AddHours(8).ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss");
     string mjesec = DateTime.Now.Month.ToString("d2");
 
 
@@ -68,7 +73,8 @@
 
     }
 
-    else if (mjesec == "10") {
+    else if (mjesec == "10")
+    {
         ViewBag.mjesec = "listopad";
 
     }
@@ -96,8 +102,8 @@
 
 
 <style>
-    p{
-        margin:10px 0px 10px 0px;
+    p {
+        margin: 10px 0px 10px 0px;
     }
 </style>
 
@@ -116,13 +122,13 @@
         <p>U evidenciju radnih sati upisujes kada si dosao/la na posao.</p>
         <p> Cilj je lakše praćenje te planiranje i korištenje slobodnih sati</p>
         <p> Svaka minuta je bitna te se kasnije moze zamijeniti ili iskoristiti za raniji odlazak s posla.</p>
-       <br />
+        <br />
         <label>
             Datum: @ViewBag.dan
         </label>
         <br />
         <label>
-           Mjesec: @ViewBag.mjesec
+            Mjesec: @ViewBag.mjesec
         </label>
     </div>
 
@@ -137,50 +143,56 @@
 
 
 
-@using (Html.BeginForm("IspisSati","RadniSati", FormMethod.Post)){
+@using (Html.BeginForm("IspisSati", "RadniSati", FormMethod.Post))
+{
 
-<div style="margin:30px">
+    <div style="margin:30px">
 
-    <div>
-        <label>
+        <div>
+            <label>
 
-           Početak
-        </label>
+                Početak
+            </label>
+        </div>
+        <div>
+            <label>
+
+                <input type="datetime-local" value="@ViewBag.danas" name="Ulazak" id="Ulazak" />
+
+
+            </label>
+        </div>
+        <div>
+            <label>
+
+
+                Kraj
+            </label>
+        </div>
+
+        <div>
+
+            <label>
+                <input type="datetime-local" value="@ViewBag.kraj" name="Izlazak" id="Izlazak" />
+
+            </label>
+        </div>
+
+        <br />
+
+
+        <div>
+            <button type="submit">Upisi</button>
+            <br />
+
+        </div>
+
+        <div style="margin:20px 0px 20px 0px">
+            @Html.ActionLink("Povratak", "Index")
+        </div>
+
     </div>
-    <div>
-        <label>
-
-            <input type="datetime" value="@ViewBag.danas" name="Ulazak" id="Ulazak" />
-        
-
-        </label>
-    </div>
-    <div>
-        <label>
-
-
-          Kraj
-        </label>
-    </div>
-
-    <div>
-
-        <label>
-            <input type="datetime" value="@ViewBag.kraj" name="Izlazak" id="Izlazak" />
-        
-        </label>
-    </div>
-
-    <br />
-
-
-    <div>
-        <button type="submit">Upisi</button>
-      
-    </div>
-
-</div>
-
-
-
-}
+   
+       
+ 
+        }
