@@ -5,10 +5,33 @@
 
 <style>
     p{
-        margin:10px 0px 10px 0px;
+        margin:10px 0px 10px 40px;
     }
     button {
-        margin: 10px 0px 10px 0px;
+        margin: 10px 0px 10px 50px;
+    }
+
+    .validation-summary-errors {
+        color: #f00;
+        font-weight: bold;
+        list-style-type: none !important;
+        padding: 0;
+        margin: 0;
+        font-size:12px;
+    }
+
+    li {
+        list-style-type: none;
+        padding: 0;
+        margin:0;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    h2{
+        margin:30px 0px 20px 40px;
     }
  
 </style>
@@ -18,14 +41,15 @@
 
 @using (Html.BeginForm("UnosSati","RadniSati", FormMethod.Post))
 { 
+    
 
 <div class="container" style=" margin: 250px 400px 350px 400px;">
 
-    <h2>Prijava zaposlenika</h2>
+    <h2>Sign in</h2>
     <p>
         Username:
     </p>
-    <input type="text" id="Username" name="Username"/>
+    <input type="text" id="Username" name="Username" />
     <p>
         Password:
     </p>
@@ -33,6 +57,7 @@
 
     <br />
     <button type="submit" value="Login">Login</button>
+    @Html.ValidationSummary()
 
 </div>
 

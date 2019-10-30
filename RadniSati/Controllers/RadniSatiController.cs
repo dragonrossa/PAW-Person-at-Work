@@ -58,15 +58,30 @@ namespace RadniSati.Controllers
             {
                 while (reader.Read())
                 {
+
                   
-                    Debug.WriteLine("{0}", reader[0]);
+                    if (string.IsNullOrEmpty(username)!= string.IsNullOrEmpty(password))
+                    {
+                        
+                        ModelState.AddModelError("Login","Upiši username i password!");
+
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("Login", "Obavezno upiši sve podatke!");
+                    }
+
+
+                        Debug.WriteLine("{0}", reader[0]);
 
                     if (reader[0].ToString() == "1")
                     {
                         return View("UnosSati");
                     }
+
                     else
                     {
+                        
                         return View("Index");
                     }
 
