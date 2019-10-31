@@ -30,16 +30,20 @@ namespace RadniSati.Controllers
         }
 
 
-       
-        public ViewResult UnosSati()
+
+
+        public ViewResult Izbornik()
         {
-           
+
             return View();
         }
 
+
+
         [HttpPost]
-        public ViewResult UnosSati(FormCollection form)
+        public ActionResult Izbornik(FormCollection form)
         {
+
             string username = form["Username"];
             ViewBag.username = form["Username"];
             //proslijediti na sljedeći ViewResult
@@ -52,9 +56,9 @@ namespace RadniSati.Controllers
             //connect na bazu
             cnn = new SqlConnection(connectionString: RadniSati.ConnectionString);
             cnn.Open();
-            
+
             SqlCommand command = new SqlCommand("IF EXISTS (SELECT * FROM dbo.Login WHERE Username = @username AND Password=@password) SELECT 1 ELSE SELECT 2", cnn);
-            
+
             command.Parameters.AddWithValue("@username", username);
             command.Parameters.AddWithValue("@password", password);
 
@@ -65,11 +69,11 @@ namespace RadniSati.Controllers
                 while (reader.Read())
                 {
 
-                  
-                    if (string.IsNullOrEmpty(username)!= string.IsNullOrEmpty(password))
+
+                    if (string.IsNullOrEmpty(username) != string.IsNullOrEmpty(password))
                     {
-                        
-                        ModelState.AddModelError("Login","Upiši username i password!");
+
+                        ModelState.AddModelError("Login", "Upiši username i password!");
 
                     }
                     else
@@ -78,16 +82,16 @@ namespace RadniSati.Controllers
                     }
 
 
-                        Debug.WriteLine("{0}", reader[0]);
+                    Debug.WriteLine("{0}", reader[0]);
 
                     if (reader[0].ToString() == "1")
                     {
-                        return View("UnosSati");
+                        return View("Izbornik");
                     }
 
                     else
                     {
-                        
+
                         return View("Index");
                     }
 
@@ -100,7 +104,14 @@ namespace RadniSati.Controllers
 
 
 
-        
+            return View();
+        }
+
+
+       
+        public ViewResult UnosSati()
+        {
+           
             return View();
         }
 

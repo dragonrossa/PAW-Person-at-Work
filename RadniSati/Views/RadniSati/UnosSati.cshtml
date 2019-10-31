@@ -4,34 +4,12 @@
 
 @{
     ViewBag.Title = "UnosSati";
-    //string danasBaza = DateTime.Now.ToString("dd'.'MM'.'yyyy - HH:mm:ss");
-    //string danas = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss");
-
-    //string danas = DateTime.ParseExact(ViewBag.ulaz, "yyyy'-'MM'-'dd' 'HH':'mm':'ss", null);
     string danas = DateTime.Now.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss");
-
-    //string dan = DateTime.Now.ToString("dd'.'MM'.'yyyy");
-
     string dan = DateTime.Now.ToString("yyyy'-'MM'-'dd");
-
     ViewBag.dan = dan;
     ViewBag.danas = danas;
-
-
-    //string kasnijeBaza = DateTime.Now.AddHours(8).ToString("dd'.'MM'.'yyyy - HH:mm:ss");
-
     ViewBag.kraj = DateTime.Now.AddHours(8).ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ss");
-
-
-    //DateTime date7 = DateTime.ParseExact(ViewBag.izlaz, "yyyy'-'MM'-'dd' 'HH':'mm':'ss", null);
-
-
     string mjesec = DateTime.Now.Month.ToString("d2");
-
-
-
-
-
 
     if (mjesec == "1")
     {
@@ -129,10 +107,6 @@
 
 
     <div>
-        <label style="color:red">
-            Pozdrav @ViewBag.username!
-        </label>
-        <br />
         <p>U evidenciju radnih sati upisuješ kada si dosao/la na posao.</p>
         <p> Cilj je lakše praćenje te planiranje i korištenje slobodnih sati.</p>
         <p> Svaka minuta je bitna te se kasnije moze zamijeniti/iskoristiti za raniji odlazak s posla.</p>

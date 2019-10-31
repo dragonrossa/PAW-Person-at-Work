@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Izbornik";
+}
+
+
+<div class="container">
+
+    <h2>Izbornik</h2>
+
+    <p style="color:red">
+        Pozdrav @ViewBag.username!
+    </p>
+    <p style="margin:10px 0px 10px 0px">Izaberi aplikaciju</p>
+
+    <ul>
+        <li>
+            @Html.ActionLink("Unos sati", "UnosSati")
+        </li>
+    </ul>
+
+    <p>
+        @Html.ActionLink("Log out", "Index")
+    </p>
+</div>
+
