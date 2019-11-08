@@ -104,7 +104,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\IzbornikController.cs" />
+    <Compile Include="Controllers\ProjektController.cs" />
     <Compile Include="Controllers\RadniSatiController.cs" />
+    <Compile Include="Controllers\TaskController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
+    <Compile Include="Controllers\ZaposleniciController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -123,7 +128,7 @@
     <Content Include="Views\RadniSati\UnosSati.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\RadniSati\Index.cshtml" />
-    <Content Include="Views\RadniSati\Izbornik.cshtml" />
+    <Content Include="Views\Izbornik\Izbornik.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -133,6 +138,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Projekt\" />
+    <Folder Include="Views\Task\" />
+    <Folder Include="Views\Ticket\" />
+    <Folder Include="Views\Zaposlenici\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
