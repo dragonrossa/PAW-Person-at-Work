@@ -1,11 +1,13 @@
 ﻿using RadniSati.Models;
 using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data;
+using System.Data.SqlClient;
+using System.Globalization;
 
 namespace RadniSati.Controllers
 {
@@ -16,15 +18,27 @@ namespace RadniSati.Controllers
         SqlConnection cnn;
 
         // GET: Izbornik
-        public ActionResult Izbornik()
+        public ViewResult Izbornik()
         {
             return View();
         }
 
 
+        public ViewResult Index()
+        {
+
+            //open database
+            cnn = new SqlConnection(connectionString: RadniSati.ConnectionString);
+            cnn.Open();
+
+            Debug.WriteLine("Connection Open!");
+            cnn.Close();
+
+            return View();
+        }
 
         [HttpPost]
-        public ActionResult Izbornik(FormCollection form)
+        public ViewResult Provjera(FormCollection form)
         {
 
             string username = form["Username"];
@@ -69,7 +83,7 @@ namespace RadniSati.Controllers
 
                     if (reader[0].ToString() == "1")
                     {
-                        return View("Izbornik");
+                        return View("~/Views/Izbornik/Izbornik.cshtml");
                     }
 
                     else
@@ -89,5 +103,10 @@ namespace RadniSati.Controllers
 
             return View();
         }
+
+
+
+
+
     }
 }

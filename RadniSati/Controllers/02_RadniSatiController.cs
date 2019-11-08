@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Data;
 using System.Data.SqlClient;
 using System.Globalization;
+using RadniSati.Controllers;
 
 namespace RadniSati.Controllers
 {
@@ -16,22 +17,8 @@ namespace RadniSati.Controllers
         Baza RadniSati = new Baza(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=RadniSati;Integrated Security=True;User ID=ROSANA\rosana;Password=;");
         SqlConnection cnn;
 
-        public ViewResult Index()
-        {
-       
-            //open database
-            cnn = new SqlConnection(connectionString: RadniSati.ConnectionString);
-            cnn.Open();
-            
-            Debug.WriteLine("Connection Open!");
-            cnn.Close();
+        
 
-            return View();
-        }
-
-
-
-       
         public ViewResult UnosSati()
         {
            

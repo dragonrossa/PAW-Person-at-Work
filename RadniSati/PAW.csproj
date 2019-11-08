@@ -104,12 +104,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\IzbornikController.cs" />
-    <Compile Include="Controllers\ProjektController.cs" />
-    <Compile Include="Controllers\RadniSatiController.cs" />
-    <Compile Include="Controllers\TaskController.cs" />
-    <Compile Include="Controllers\TicketController.cs" />
-    <Compile Include="Controllers\ZaposleniciController.cs" />
+    <Compile Include="Controllers\01_IzbornikController.cs" />
+    <Compile Include="Controllers\07_LogOutController.cs" />
+    <Compile Include="Controllers\03_ProjektController.cs" />
+    <Compile Include="Controllers\02_RadniSatiController.cs" />
+    <Compile Include="Controllers\05_TaskController.cs" />
+    <Compile Include="Controllers\04_TicketController.cs" />
+    <Compile Include="Controllers\06_ZaposleniciController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -127,8 +128,13 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\RadniSati\UnosSati.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\RadniSati\Index.cshtml" />
     <Content Include="Views\Izbornik\Izbornik.cshtml" />
+    <Content Include="Views\Projekt\Index.cshtml" />
+    <Content Include="Views\Task\Index.cshtml" />
+    <Content Include="Views\Ticket\Index.cshtml" />
+    <Content Include="Views\Zaposlenici\Index.cshtml" />
+    <Content Include="Views\LogOut\Index.cshtml" />
+    <Content Include="Views\Izbornik\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -138,10 +144,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Projekt\" />
-    <Folder Include="Views\Task\" />
-    <Folder Include="Views\Ticket\" />
-    <Folder Include="Views\Zaposlenici\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

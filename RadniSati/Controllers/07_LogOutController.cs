@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace RadniSati.Controllers
 {
-    public class TaskController : Controller
+    public class LogOutController : Controller
     {
-        // GET: Task
+        // GET: LogOut
         public ActionResult Index()
         {
             return View();

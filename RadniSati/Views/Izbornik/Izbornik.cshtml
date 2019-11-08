@@ -1,52 +1,96 @@
-﻿
+﻿@model RadniSati.Controllers.IzbornikController
+
 @{
     ViewBag.Title = "Izbornik";
 }
+
+
+<style>
+  
+
+    h2 {
+        margin: 20px 0px 20px 0px;
+    }
+
+    
+    .col {
+        margin: 10px 10px 20px 10px;
+    }
+
+    button{
+        margin: 10px 0px;
+    }
+
+    p {
+        margin: 10px 5px;
+    }
+</style>
 
 
 <div class="container">
 
     <h2>Izbornik</h2>
 
-    <p style="color:red">
-        Pozdrav @ViewBag.username!
-    </p>
-    <p style="margin:10px 0px 10px 0px">Izaberi aplikaciju</p>
 
-    <ul>
-        <li>
-            @Html.ActionLink("Unos sati", "UnosSati", "RadniSati")
-        </li>
-    </ul>
-
-    <ul>
-        <li>
-            Projekt
-        </li>
-    </ul>
+    <div class="row no-gutters">
+        <div class="col-10 col-sm-4 col-md-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="~/Izbornik/Index">PAW</a></li>
+                    <li class="breadcrumb-item"><a href="~/Izbornik/Index">Index</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Izbornik</li>
+                </ol>
+            </nav>
+        </div>
+        @*  <div class="col-8 col-md-8"></div>*@
+    </div>
 
 
-    <ul>
-        <li>
-            Ticket
-        </li>
-    </ul>
 
 
-    <ul>
-        <li>
-            Task
-        </li>
-    </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col" style="color:red"> Pozdrav @ViewBag.username!</div>
+            <div class="col"></div>
+            <div class="w-100"></div>
+            <div class="col">U nastavku izbornik aplikacija.</div>
+            <div class="col"></div>
+        </div>
+    </div>
 
-    <ul>
-        <li>
-            Employees
-        </li>
-    </ul>
+
+
+
+
+    <div class="row no-gutters">
+        <div class="col-10 col-sm-4 col-md-4">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">@Html.ActionLink("Timesheet", "UnosSati", "RadniSati")</li>
+                <li class="list-group-item"> @Html.ActionLink("Projekt", "Index", "Projekt")</li>
+                <li class="list-group-item">@Html.ActionLink("Ticket", "Index", "Ticket")</li>
+                <li class="list-group-item"> @Html.ActionLink("Task", "Index", "Task")</li>
+                <li class="list-group-item">@Html.ActionLink("Employees", "Index", "Zaposlenici")</li>
+            </ul>
+        </div>
+        @*  <div class="col-8 col-md-8"></div>*@
+    </div>
+
+
+
+
+
+
+
+    <nav class="navbar navbar-light bg-light">
+
+        <form class="@*form-inline*@">
+            <input class="form-control mr-sm-2" type="search" placeholder="Upiši projekt, ticket..." aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Traži</button>
+        </form>
+    </nav>
 
     <p>
-        @Html.ActionLink("Log out", "Index", "RadniSati")
+        @Html.ActionLink("Log out", "Index", "LogOut")
     </p>
 </div>
 
