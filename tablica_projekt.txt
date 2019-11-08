@@ -1,0 +1,13 @@
+Projekt
+
+Atributi:
+
+ŠifraProjekta
+NazivProjekta
+OpisProjekta
+KoordinatorProjekta
+ImeZaposlenika
+PrezimeZaposlenika
+Pocetak
+Kraj
+Datum

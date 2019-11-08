@@ -16,7 +16,7 @@ namespace RadniSati
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Izbornik", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Prijava", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

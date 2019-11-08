@@ -5,7 +5,26 @@
 
 
 <div class="container">
-    <h2>Index</h2>
+    <h2>Projekti</h2>
+
+    <div class="row no-gutters">
+        <div class="col-10 col-sm-4 col-md-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="~/Prijava/Index">Index</a></li>
+                    <li class="breadcrumb-item"><a href="~/Izbornik/Izbornik">Izbornik</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Projekt</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <h3>Izaberi iz izbornika:</h3>
+    <p>
+        @Html.ActionLink("Upis projekta", "UpisProjekta", "Projekt")
+    </p>
     <p>
         @Html.ActionLink("Povratak", "Izbornik", "Izbornik")
     </p>

@@ -18,5 +18,10 @@ namespace RadniSati.Controllers
         {
             return View();
         }
+
+        public ActionResult UpisProjekta()
+        {
+            return View();
+        }
     }
 }

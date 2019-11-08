@@ -24,19 +24,6 @@ namespace RadniSati.Controllers
         }
 
 
-        public ViewResult Index()
-        {
-
-            //open database
-            cnn = new SqlConnection(connectionString: RadniSati.ConnectionString);
-            cnn.Open();
-
-            Debug.WriteLine("Connection Open!");
-            cnn.Close();
-
-            return View();
-        }
-
         [HttpPost]
         public ViewResult Provjera(FormCollection form)
         {
@@ -89,7 +76,7 @@ namespace RadniSati.Controllers
                     else
                     {
 
-                        return View("Index");
+                        return View("~/Views/Prijava/Index.cshtml");
                     }
 
                 }

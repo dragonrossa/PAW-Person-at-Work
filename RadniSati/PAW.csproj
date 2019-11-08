@@ -111,6 +111,7 @@
     <Compile Include="Controllers\05_TaskController.cs" />
     <Compile Include="Controllers\04_TicketController.cs" />
     <Compile Include="Controllers\06_ZaposleniciController.cs" />
+    <Compile Include="Controllers\00_PrijavaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -134,7 +135,8 @@
     <Content Include="Views\Ticket\Index.cshtml" />
     <Content Include="Views\Zaposlenici\Index.cshtml" />
     <Content Include="Views\LogOut\Index.cshtml" />
-    <Content Include="Views\Izbornik\Index.cshtml" />
+    <Content Include="Views\Prijava\Index.cshtml" />
+    <Content Include="Views\Projekt\UpisProjekta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
