@@ -2,12 +2,30 @@ Projekt
 
 Atributi:
 
-ŠifraProjekta
-NazivProjekta
-OpisProjekta
-KoordinatorProjekta
-ImeZaposlenika
-PrezimeZaposlenika
-Pocetak
-Kraj
-Datum
+1. ŠifraProjekta - automatski, IDENTITY(1,1)
+
+*O projektu*
+
+1.Naziv
+2.Opis
+3.PM
+4.Task
+5.Rezultat
+6.Koordinator
+7.Klijent
+
+*Timeline*
+
+1.Pocetak
+2.Kraj
+3.Datum
+
+*Financije*
+
+1.Budget
+2.Drzava
+
+*Ostalo*
+
+1.ImeZaposlenika
+2.PrezimeZaposlenika

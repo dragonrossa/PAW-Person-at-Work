@@ -9,29 +9,37 @@
         margin: 20px 0px;
     }
 
-    .no-gutters{
+    .no-gutters {
         margin: 0px 0px;
-      
     }
 
     h2 {
         margin: 20px 0px 20px 0px;
     }
-
-
-
 </style>
 
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            alert("Podaci su upisani u bazu!");
+        });
+    });
+
+</script>
 
 
 <div class="container">
 
 
+
     <h2>Projekti</h2>
 
-    <div class="row no-gutters" >
-        <div class="col-10 col-sm-4 col-md-4" style="padding:0px;" >
+
+
+    <div class="row no-gutters">
+        <div class="col-10 col-sm-4 col-md-4" style="padding:0px;">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="~/Izbornik/Izbornik">Izbornik</a></li>
@@ -44,65 +52,221 @@
 
 
 
-    <form>
-        <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-            </div>
-        </div>
-        <div class="form-group row">
-            <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-            <div class="col-sm-10">
-                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-            </div>
-        </div>
-        <fieldset class="form-group">
-            <div class="row">
-                <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+
+    @using (Html.BeginForm("UpisProjekta", "Projekt", FormMethod.Post))
+    {
+
+        <form>
+
+            <h3>O projektu</h3>
+
+            <!--1-->
+            <hr />
+            <div class="form-group row">
+                <label for="Naziv" class="col-sm-2 col-form-label">Naziv</label>
                 <div class="col-sm-10">
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                        <label class="form-check-label" for="gridRadios1">
-                            First radio
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                        <label class="form-check-label" for="gridRadios2">
-                            Second radio
-                        </label>
-                    </div>
-                    <div class="form-check disabled">
-                        <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                        <label class="form-check-label" for="gridRadios3">
-                            Third disabled radio
-                        </label>
-                    </div>
+                    <input type="text" class="form-control" id="Naziv" placeholder="naziv projekta" name="Naziv">
+
                 </div>
             </div>
-        </fieldset>
-        <div class="form-group row">
-            <div class="col-sm-2">Checkbox</div>
-            <div class="col-sm-10">
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                    <label class="form-check-label" for="gridCheck1">
-                        Example checkbox
-                    </label>
+
+
+            <!--2-->
+
+            <div class="form-group row">
+                <label for="Opis" class="col-sm-2 col-form-label">Opis</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Opis" placeholder="opisi projekt" name="Opis">
                 </div>
             </div>
-        </div>
-        <div class="form-group row">
-            <div class="col-sm-10">
-                <button type="submit" class="btn btn-primary">Sign in</button>
+
+            <!--3-->
+
+            <div class="form-group row">
+                <label for="PM" class="col-sm-2 col-form-label">PM</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="PM" placeholder="project manager" name="PM">
+                </div>
             </div>
-        </div>
-    </form>
+
+            <!--4-->
+
+            <div class="form-group row">
+                <label for="Task" class="col-sm-2 col-form-label">Task</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Task" placeholder="ukratko opisi task" name="Task">
+                </div>
+            </div>
 
 
-    <p>
-        @Html.ActionLink("Povratak", "Index", "Projekt")
-    </p>
+            <!--5-->
+
+            <div class="form-group row">
+                <label for="Rezultat" class="col-sm-2 col-form-label">Rezultat</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Task" placeholder="cilj ovog projekta je..." name="Rezultat">
+                </div>
+            </div>
+
+            <!--6-->
+
+            <div class="form-group row">
+                <label for="Koordinator" class="col-sm-2 col-form-label">Koordinator</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Koordinator" placeholder="npr. John Fitz" name="Koordinator">
+                </div>
+            </div>
+
+
+            <!--7-->
+
+            <div class="form-group row">
+                <label for="Klijent" class="col-sm-2 col-form-label">Klijent</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="Klijent" placeholder="npr. Abeceda" name="Klijent">
+                </div>
+            </div>
+
+
+            <h3>Timeline</h3>
+            <hr />
+
+            <!--1-->
+            <div class="form-group row">
+                <label for="Pocetak" class="col-sm-2 col-form-label">Pocetak</label>
+                <div class="col-sm-10">
+                    <input type="datetime-local" class="form-control" id="Pocetak" name="Pocetak">
+
+                </div>
+            </div>
+            <!--2-->
+            <div class="form-group row">
+                <label for="Kraj" class="col-sm-2 col-form-label">Kraj</label>
+                <div class="col-sm-10">
+                    <input type="datetime-local" class="form-control" id="Kraj" name="Kraj">
+
+                </div>
+            </div>
+            <!--3-->
+            <div class="form-group row">
+                <label for="Datum" class="col-sm-2 col-form-label">Datum</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="Datum" name="Datum">
+
+                </div>
+            </div>
+
+
+            <h3>Financije</h3>
+            <hr />
+
+            <!--1-->
+            <div class="form-group row">
+                <label for="Budget" class="col-sm-2 col-form-label">Budget</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="iznos projekta" name="Budget">
+
+                </div>
+            </div>
+
+            <!--2-->
+            <fieldset class="form-group">
+                <div class="row">
+                    <div class="col-form-label col-sm-2 pt-0">Drzava</div>
+                    <div class="col-sm-10">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Drzava" id="gridRadios1" value="Hrvatska" checked>
+                            <label class="form-check-label" for="gridRadios1">
+                                Hrvatska
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Drzava" id="gridRadios2" value="Njemacka">
+                            <label class="form-check-label" for="gridRadios2">
+                                Njemacka
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Drzava" id="gridRadios3" value="Slovenija">
+                            <label class="form-check-label" for="gridRadios3">
+                                Slovenija
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Drzava" id="gridRadios4" value="Australija">
+                            <label class="form-check-label" for="gridRadios4">
+                                Austrija
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Drzava" id="gridRadios5" value="Ostalo">
+                            <label class="form-check-label" for="gridRadios5">
+                                Ostalo
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <hr />
+            <h3>Ostalo</h3>
+
+
+            <!--1-->
+
+            <div class="form-group row">
+                <hr />
+                <label for="ImeZaposlenika" class="col-sm-2 col-form-label">Ime zaposlenika</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="ImeZaposlenika" placeholder="npr. Marko" name="ImeZaposlenika">
+                </div>
+            </div>
+
+            <!--2-->
+
+            <div class="form-group row">
+                <label for="PrezimeZaposlenika" class="col-sm-2 col-form-label">Prezime zaposlenika</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="PrezimeZaposlenika" placeholder="npr. Ivancic" name="PrezimeZaposlenika">
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group row">
+                <div class="col-sm-2">
+
+                </div>
+
+                <div class="col-sm-10">
+                    <button type="submit" value="Upisi">Upisi</button>
+
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="col-sm-2">
+
+                </div>
+
+                <div class="col-sm-10">
+
+                    <p>
+                        @Html.ActionLink("Povratak", "Index", "Projekt", new { @style = "margin:20px 0px;" })
+                    </p>
+
+                </div>
+            </div>
+
+
+
+
+
+        </form>
+
+    }
+
 
 </div>
