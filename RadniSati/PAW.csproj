@@ -116,6 +116,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Baza.cs" />
+    <Compile Include="Models\Projekt.cs" />
     <Compile Include="Models\Sati.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -137,6 +138,8 @@
     <Content Include="Views\LogOut\Index.cshtml" />
     <Content Include="Views\Prijava\Index.cshtml" />
     <Content Include="Views\Projekt\UpisProjekta.cshtml" />
+    <Content Include="Views\Projekt\PopisProjekata.cshtml" />
+    <Content Include="Views\Projekt\IzmjenaProjekata.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

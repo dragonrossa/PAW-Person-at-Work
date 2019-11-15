@@ -1,0 +1,92 @@
+﻿@model  IEnumerable<RadniSati.Models.Projekt>
+
+
+
+@{
+    ViewBag.Title = "PopisProjekata";
+}
+
+
+<style>
+
+    h2 {
+        margin: 20px 0px 20px 0px;
+    }
+
+    h3 {
+        margin: 30px 0px 30px 0px;
+    }
+
+    p {
+        margin: 20px 0px 20px 0px;
+    }
+
+    table, td, th {
+        border: 1px solid #ddd;
+        text-align: left;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 10px 10px;
+    }
+</style>
+
+
+
+<h2>Popis projekata</h2>
+
+
+
+<h3>U nastavku popis projekata</h3>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-3 col-md-1"></div>
+        <div class="col-9 col-md-8">
+            <table>
+                <tr>
+                    <th> @Html.DisplayNameFor(model => model.Naziv)</th>
+                    <th> @Html.DisplayNameFor(model => model.Opis)</th>
+                    <th> @Html.DisplayNameFor(model => model.PM)</th>
+                    <th> @Html.DisplayNameFor(model => model.Klijent)</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Naziv)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Opis)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PM)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Klijent)
+                        </td>
+
+                    </tr>
+                }
+            </table>
+
+            <p>
+                @Html.ActionLink("Povratak", "Index", "Projekt")
+            </p>
+
+
+        </div>
+        <div class="col-6 col-md-1"></div>
+    </div>
+
+   
+</div>
+

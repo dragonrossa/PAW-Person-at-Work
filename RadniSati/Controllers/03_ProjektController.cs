@@ -15,6 +15,8 @@ namespace RadniSati.Controllers
         Baza RadniSati = new Baza(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=RadniSati;Integrated Security=True;User ID=ROSANA\rosana;Password=;");
         SqlConnection cnn;
 
+       private List<Projekt> ListaProjekata = new List<Projekt>();
+
         // GET: Projekt
         public ActionResult Index()
         {
@@ -44,9 +46,7 @@ namespace RadniSati.Controllers
             string imeZaposlenika = form["ImeZaposlenika"];
             string prezimeZaposlenika= form["PrezimeZaposlenika"];
 
-          
 
-            //ViewBag.naziv = form["Naziv"];
             Debug.WriteLine(naziv);
             Debug.WriteLine(opis);
             Debug.WriteLine(pm);
@@ -62,44 +62,6 @@ namespace RadniSati.Controllers
             Debug.WriteLine(imeZaposlenika);
             Debug.WriteLine(prezimeZaposlenika);
 
-
-
-            //cnn = new SqlConnection(connectionString: RadniSati.ConnectionString);
-            //cnn.Open();
-
-            //SqlCommand command = new SqlCommand("SELECT u.Šifra, u.ImeZaposlenika,u.PrezimeZaposlenika, u.TipZaposlenika from dbo.UnosSati u JOIN dbo.Login l on u.Šifra=l.ŠifraZaposlenika WHERE l.Username=@username", cnn);
-
-            //command.Parameters.AddWithValue("@username", TempData["Username"]);
-
-
-            //int result = command.ExecuteNonQuery();
-
-            //using (SqlDataReader reader = command.ExecuteReader())
-            //{
-            //    while (reader.Read())
-            //    {
-
-            //        TempData["sifra"] = reader[0].ToString();
-            //        TempData["ime"] = reader[1].ToString();
-            //        TempData["prezime"] = reader[2].ToString();
-            //        TempData["tipZaposlenika"] = reader[3].ToString();
-
-            //    }
-            //}
-
-
-            //Debug.WriteLine("Connection Closed!");
-            //cnn.Close();
-
-            //Debug.WriteLine(TempData["Sifra"]);  //sifra za unos
-            //Debug.WriteLine(TempData["Ime"]);  //ime za unos
-            //Debug.WriteLine(TempData["Prezime"]); //prezime za unos
-            //Debug.WriteLine(TempData["Datum"]); //datum za unos
-            //Debug.WriteLine(TempData["Ulazak"]); //ulazak za unos
-            //Debug.WriteLine(TempData["Izlazak"]); //izlazak za unos
-            //Debug.WriteLine(TempData["Razlika"]); //razlika za unos
-            //Debug.WriteLine(TempData["Visak"]); //visak za unos
-            //Debug.WriteLine(TempData["TipZaposlenika"]); //tip zaposlenika za unos
 
 
 
@@ -169,5 +131,71 @@ namespace RadniSati.Controllers
 
             return View();
         }
+
+        public ActionResult PopisProjekata()
+        {
+
+            try
+            {
+
+                
+
+                cnn = new SqlConnection(connectionString: RadniSati.ConnectionString);
+
+                cnn.Open();
+
+                SqlCommand projekti = new SqlCommand("SELECT Naziv, Opis, PM, Klijent FROM Projekt", cnn);
+
+
+                using (SqlDataReader reader = projekti.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        //Debug.WriteLine(String.Format("{0}, {1}, {2}, {3}", reader[0].ToString(), reader[1].ToString(), reader[2].ToString(),reader[3]).ToString());
+                   
+                        TempData["nazivProjekta"] = reader[0].ToString(); //opis
+                        TempData["opisProjekta"] = reader[1].ToString(); //naziv
+                        TempData["pmProjekta"] = reader[2].ToString(); //PM
+                        TempData["klijentProjekta"] = reader[3].ToString(); //klijent-naručitelj
+                     
+                        ListaProjekata.Add(new Projekt(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString()));
+                        
+                    }
+
+                   
+                }
+
+
+                cnn.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
+            finally
+            {
+
+                Debug.WriteLine("Podaci su OK!");
+            }
+
+
+
+
+
+
+            return View(ListaProjekata);
+        }
+
+
+
+        public ActionResult IzmjenaProjekata()
+        {
+            return View();
+        }
+
+
     }
 }
