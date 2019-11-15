@@ -7,7 +7,7 @@ namespace RadniSati.Models
 {
     public class Projekt
     {
-
+        public int Sifra { get; set; }
         public string Naziv { get; set; }
         public string Opis { get; set; }
         public string PM { get; set; }
@@ -21,6 +21,12 @@ namespace RadniSati.Models
             this.Klijent = klijent;
         }
 
+
+        public Projekt(int sifra, string naziv)
+        {
+            this.Sifra = sifra;
+            this.Naziv = naziv;
+        }
 
     }
 }

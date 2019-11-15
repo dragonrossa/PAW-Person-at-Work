@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "IzmijeniProjekt";
+}
+
+
+<style>
+     h2 {
+        margin: 20px 0px 20px 0px;
+    }
+    p {
+        margin: 10px 0px 10px 0px;
+    }
+</style>
+
+
+
+
+<div class="container">
+    <h2>Promijeni projekt</h2>
+    <div class="row no-gutters">
+        <div class="col-10 col-sm-4 col-md-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="~/Projekt/Index">Projekt</a></li>
+                    <li class="breadcrumb-item"><a href="~/Projekt/IzmijenaProjekta">Izmijena projekata</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">IzmjenaProjekata</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+   
+        <p>
+            Id projekta:
+
+            @*@ViewBag.id*@
+        </p>
+        <p><input type="text" value="@ViewBag.id" name="id" id="id" placeholder="@ViewBag.id"></p>
+        <p>
+            Naziv projekta 
+          @*  @ViewBag.naziv*@
+
+        </p>
+        <p> <input type="text" value="@ViewBag.naziv" name="id" id="id" placeholder="@ViewBag.naziv"></p>
+
+        <input type="submit" value="Upisi" />
+   
+        <p>
+            @Html.ActionLink("Povratak", "Index", "Projekt")
+        </p>
+    
+    <hr />
+
+</div>
+
+  

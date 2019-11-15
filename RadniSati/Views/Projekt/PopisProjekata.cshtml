@@ -38,17 +38,28 @@
 
 
 
-<h2>Popis projekata</h2>
-
-
-
-<h3>U nastavku popis projekata</h3>
 
 <div class="container">
+    <h2>Popis projekata</h2>
+
+    <div class="row no-gutters">
+        <div class="col-10 col-sm-4 col-md-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="~/Izbornik/Izbornik">Izbornik</a></li>
+                    <li class="breadcrumb-item"><a href="~/Projekt/Index">Projekt</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">IzmjenaProjekata</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <h3>U nastavku popis projekata</h3>
+
 
     <div class="row">
-        <div class="col-3 col-md-1"></div>
-        <div class="col-9 col-md-8">
+        <div class="col-sm-6">
+
             <table>
                 <tr>
                     <th> @Html.DisplayNameFor(model => model.Naziv)</th>
@@ -78,15 +89,14 @@
                 }
             </table>
 
-            <p>
-                @Html.ActionLink("Povratak", "Index", "Projekt")
-            </p>
 
 
         </div>
-        <div class="col-6 col-md-1"></div>
+        <div class="col-sm-6"></div>
+
     </div>
 
-   
+    <p>
+        @Html.ActionLink("Povratak", "Index", "Projekt")
+    </p>
 </div>
-

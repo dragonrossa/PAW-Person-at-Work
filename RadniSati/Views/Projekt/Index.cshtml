@@ -9,6 +9,12 @@
     h2 {
         margin: 20px 0px 20px 0px;
     }
+    span[class="glyphicon glyphicon-cog"], 
+    span[class="glyphicon glyphicon-backward"] 
+                { 
+        margin: 5px 5px 5px 5px; 
+
+    }
 </style>
 
 
@@ -30,16 +36,18 @@
 
 
     <h3>Izaberi iz izbornika:</h3>
+    <hr />
     <p>
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
         @Html.ActionLink("Upis projekta", "UpisProjekta", "Projekt")
     </p>
-    <p>
+    <p><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
         @Html.ActionLink("Popis projekata", "PopisProjekata", "Projekt")
     </p>
-    <p>
+    <p><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
         @Html.ActionLink("Izmjena projekata", "IzmjenaProjekata", "Projekt")
     </p>
-    <p>
+    <p><span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
         @Html.ActionLink("Povratak", "Izbornik", "Izbornik")
     </p>
 </div>

@@ -1,10 +1,92 @@
-﻿
+﻿@model  IEnumerable<RadniSati.Models.Projekt>
+
+
+
 @{
     ViewBag.Title = "IzmjenaProjekata";
 }
 
-<h2>Izmjena projekata</h2>
 
-<h3>Izaberi projekt s popisa</h3>
+<style>
+
+    h2 {
+        margin: 20px 0px 20px 0px;
+    }
+
+    h3 {
+        margin: 20px 0px 20px 0px;
+    }
+
+    p {
+        margin: 20px 0px 20px 0px;
+    }
+
+    input[type=submit] {
+        background-color: #3CBC8D;
+        color: white;
+        margin: 0px 10px 0px 10px;
+        border-width: 0px;
+        border: none;
+    }
+
+    span[class="glyphicon glyphicon-lock"] {
+        margin: 0px 10px 0px 10px;
+    }
+
+</style>
+
+
+<div class="container">
+    <h2>Popis projekata</h2>
+
+    <div class="row no-gutters">
+        <div class="col-10 col-sm-4 col-md-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="~/Izbornik/Izbornik">Izbornik</a></li>
+                    <li class="breadcrumb-item"><a href="~/Projekt/Index">Projekt</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">IzmjenaProjekata</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+
+    <h3>Izaberi projekt</h3>
+
+    <hr />
+</div>
+
+    <div class="container-fluid">
+
+
+        @foreach (var item in Model)
+        {
+            using (Html.BeginForm("IzmijeniProjekt", "Projekt", new { id = item.Sifra, naziv = item.Naziv }, FormMethod.Post))
+            {
+                <p>
+
+                    <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+
+                    @Html.DisplayFor(modelItem => item.Naziv)
+
+
+
+                    <input type="submit" value="Izmijeni" />
+
+                    @*  @Html.ActionLink("Izmijeni", "IzmijeniProjekt", "Projekt", new { type = "submit" })*@
+
+                    @Html.ActionLink("Povratak", "Index", "Projekt")
+
+                </p>
+            }
+        }
+
+        @*<p>
+                @Html.ActionLink("Povratak", "Index", "Projekt")
+            </p>*@
+    </div>
 
 

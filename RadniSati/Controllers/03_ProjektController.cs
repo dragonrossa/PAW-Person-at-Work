@@ -193,9 +193,79 @@ namespace RadniSati.Controllers
 
         public ActionResult IzmjenaProjekata()
         {
+
+            try
+            {
+
+
+
+                cnn = new SqlConnection(connectionString: RadniSati.ConnectionString);
+
+                cnn.Open();
+
+                SqlCommand projekti = new SqlCommand("SELECT Šifra, Naziv FROM Projekt", cnn);
+
+
+                using (SqlDataReader reader = projekti.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        //Debug.WriteLine(String.Format("{0}, {1}, {2}, {3}", reader[0].ToString(), reader[1].ToString(), reader[2].ToString(),reader[3]).ToString());
+
+                        TempData["sifra"] = reader[0].ToString(); //opis
+                       // TempData["nazivProjekta"] = reader[1].ToString(); //naziv
+                       
+                        ListaProjekata.Add(new Projekt(Int32.Parse(reader[0].ToString()), reader[1].ToString()));
+
+                    }
+
+
+                }
+
+
+                cnn.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
+            finally
+            {
+
+                Debug.WriteLine("Podaci su OK!");
+            }
+
+
+            return View(ListaProjekata);
+        }
+
+        public ActionResult IzmijeniProjekt()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult IzmijeniProjekt(FormCollection form, int id, string naziv)
+        {
+            var idProjekt = id;
+            var Naziv = naziv;
+            Debug.WriteLine(idProjekt);
+            Debug.WriteLine(Naziv);
+            ViewBag.id = idProjekt;
+            ViewBag.naziv = Naziv;
+
+
             return View();
         }
 
 
+
+
     }
+
+
 }
