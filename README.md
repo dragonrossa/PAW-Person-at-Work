@@ -33,27 +33,27 @@ Here are the options for basic user.
 
 **Timesheet**
 
-Ever wondered how much overtime work you have every day?
+> Ever wondered how much overtime work you have every day?
 
-Here is your private timesheet for those days.
+> Here is your private timesheet for those days.
 
 **Projekt**
 
-Insert some projekt and change those details.
+> Insert some projekt and change those details.
 
 **Ticket**
 
-Create ticket for some employee (depends on the role he/she has).
+> Create ticket for some employee (depends on the role he/she has).
 
 **Task**
 
-Add some task to projekt or some employee.
+> Add some task to projekt or some employee.
 
 **Employees**
 
-Add new or delete existing employees.
+> Add new or delete existing employees.
 
-Give them roles etc.
+> Give them roles etc.
 
 
 ## I dont understand this project!
