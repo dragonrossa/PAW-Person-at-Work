@@ -34,7 +34,6 @@ Here are the options for basic user.
 **Timesheet**
 
 `Ever wondered how much overtime work you have every day?
-
  Here is your private timesheet for those days.`
 
 **Projekt**
