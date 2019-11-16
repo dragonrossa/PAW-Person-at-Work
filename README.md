@@ -27,8 +27,9 @@ For example:
 
 - Search
 
-### Options
+## What can I do in this app?
 
+Here are the options for basic user.
 
 **Timesheet**
 
