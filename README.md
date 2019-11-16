@@ -1,5 +1,5 @@
 # PAW - Person at Work 
-**(CRM for personal or commercial use)
+**CRM for personal or commercial use**
 
 **Login into your account:**
 
