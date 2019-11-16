@@ -64,7 +64,7 @@
 
         @foreach (var item in Model)
         {
-            using (Html.BeginForm("IzmijeniProjekt", "Projekt", new { id = item.Sifra, naziv = item.Naziv }, FormMethod.Post))
+            using (Html.BeginForm("IzmijeniProjekt", "Projekt", new { id = item.Sifra, naziv = item.Naziv, opis = item.Opis, pm=item.PM, klijent = item.Klijent, task=item.Task, rezultat = item.Rezultat, koordinator = item.Koordinator, pocetak = item.Pocetak, kraj = item.Kraj, datum = item.Datum, budget = item.Budget, drzava = item.Drzava, ime = item.ImeZaposlenika, prezime = item.PrezimeZaposlenika}, FormMethod.Post))
             {
                 <p>
 

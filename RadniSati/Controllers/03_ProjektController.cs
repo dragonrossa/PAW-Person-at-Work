@@ -200,7 +200,7 @@ namespace RadniSati.Controllers
 
                 cnn.Open();
 
-                SqlCommand projekti = new SqlCommand("SELECT Šifra, Naziv FROM Projekt", cnn);
+                SqlCommand projekti = new SqlCommand("SELECT Šifra, Naziv,Opis, PM, Klijent, Task, Rezultat, Koordinator, Pocetak, Kraj, Datum, Budget, Drzava, ImeZaposlenika, PrezimeZaposlenika FROM Projekt", cnn);
 
 
                 using (SqlDataReader reader = projekti.ExecuteReader())
@@ -212,8 +212,12 @@ namespace RadniSati.Controllers
                         TempData["sifra"] = reader[0].ToString(); //opis
                        // TempData["nazivProjekta"] = reader[1].ToString(); //naziv
                        
-                        ListaProjekata.Add(new Projekt(Int32.Parse(reader[0].ToString()), reader[1].ToString()));
-
+                        //ListaProjekata.Add(new Projekt(Int32.Parse(reader[0].ToString()), reader[1].ToString()));
+                        ListaProjekata.Add(new Projekt(Int32.Parse(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(),
+                             reader[3].ToString(), reader[4].ToString(), reader[5].ToString(), reader[6].ToString(), reader[7].ToString(),
+                              DateTime.Parse(reader[8].ToString()), DateTime.Parse(reader[9].ToString()), reader[10].ToString(), reader[11].ToString(), reader[12].ToString(),
+                              reader[13].ToString(), reader[14].ToString()));
+                       
                     }
 
 
@@ -246,14 +250,45 @@ namespace RadniSati.Controllers
         }
 
         [HttpPost]
-        public ViewResult IzmijeniProjekt(FormCollection form, int id, string naziv)
+        public ViewResult IzmijeniProjekt(FormCollection form, int id, string naziv, string opis, string pm, string klijent, string task, string rezultat, string koordinator, DateTime pocetak, DateTime kraj, string datum, string budget, string drzava, string ime, string prezime)
         {
-            var idProjekt = id;
-            var Naziv = naziv;
-            Debug.WriteLine(idProjekt);
-            Debug.WriteLine(Naziv);
-            ViewBag.id = idProjekt;
-            ViewBag.naziv = Naziv;
+            //var idProjekt = id;
+            //var Naziv = naziv;
+            //var Opis = opis;
+            //var PM = pm;
+            //var Klijent = klijent; 
+            ViewBag.id1 = id;
+            ViewBag.naziv1 = naziv;
+            ViewBag.opis1 = opis;
+            ViewBag.pm1 = pm;
+            ViewBag.klijent1 = klijent;
+            ViewBag.task1 = task;
+            ViewBag.rezultat1 = rezultat;
+            ViewBag.koordinator1 = koordinator;
+            ViewBag.pocetak1 = pocetak;
+            ViewBag.kraj1 = kraj;
+            ViewBag.datum1 = datum;
+            ViewBag.budget1 = budget;
+            ViewBag.drzava1 = drzava;
+            ViewBag.ime1 = ime;
+            ViewBag.prezime1 = prezime;
+
+
+            Debug.WriteLine(id);
+            Debug.WriteLine(naziv);
+            Debug.WriteLine(opis);
+            Debug.WriteLine(pm);
+            Debug.WriteLine(klijent);
+            Debug.WriteLine(task);
+            Debug.WriteLine(rezultat);
+            Debug.WriteLine(koordinator);
+            Debug.WriteLine(pocetak);
+            Debug.WriteLine(kraj);
+            Debug.WriteLine(datum);
+            Debug.WriteLine(budget);
+            Debug.WriteLine(drzava);
+            Debug.WriteLine(ime);
+            Debug.WriteLine(prezime);
 
 
             return View();
