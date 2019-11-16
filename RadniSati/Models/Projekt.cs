@@ -13,8 +13,9 @@ namespace RadniSati.Models
         public string PM { get; set; }
         public string Klijent { get; set; }
 
-        public Projekt(string naziv, string opis, string pm, string klijent)
+        public Projekt(int sifra, string naziv, string opis, string pm, string klijent)
         {
+            this.Sifra = sifra;
             this.Naziv = naziv;
             this.Opis = opis;
             this.PM = pm;

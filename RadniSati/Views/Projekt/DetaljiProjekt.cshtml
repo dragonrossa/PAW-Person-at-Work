@@ -1,0 +1,96 @@
+﻿
+@{
+    ViewBag.Title = "DetaljiProjekt";
+}
+
+
+<style>
+
+    h2 {
+        margin: 20px 0px 20px 0px;
+    }
+
+    h3 {
+        margin: 30px 0px 30px 0px;
+    }
+
+    p {
+        margin: 20px 0px 20px 0px;
+    }
+
+
+    span[class="glyphicon glyphicon-pushpin"], span[class="glyphicon glyphicon-backward"] {
+        margin: 0px 10px 0px 10px;
+    }
+
+</style>
+
+
+<div class="container">
+    <h2>Detalji o projektu</h2>
+    <div class="row no-gutters">
+        <div class="col-10 col-sm-4 col-md-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="~/Projekt/Index">Projekt</a></li>
+                    <li class="breadcrumb-item"><a href="~/Projekt/PopisProjekta">Popis projekata</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Detalji o projektu</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <h3> Osnovne informacija</h3>
+
+    <hr />
+
+    <p>
+
+        <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>
+
+        <b> Id:</b> @ViewBag.id
+    </p>
+
+
+    <p>
+        <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>
+
+        <b> Naziv:</b> @ViewBag.naziv
+
+    </p>
+
+    <p>
+        <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>
+
+        <b>Opis:</b> @ViewBag.opis
+      
+
+
+    </p>
+
+    <p>
+        <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>
+        <b>Projekt manager:</b> @ViewBag.pm
+ 
+
+
+    </p>
+
+    <p>
+        <span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>
+        <b>Klijent:</b> @ViewBag.klijent
+
+
+    </p>
+
+
+
+    <p>
+        <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+
+        @Html.ActionLink("Povratak", "PopisProjekata", "Projekt")
+    </p>
+
+
+
+</div>

@@ -144,7 +144,7 @@ namespace RadniSati.Controllers
 
                 cnn.Open();
 
-                SqlCommand projekti = new SqlCommand("SELECT Naziv, Opis, PM, Klijent FROM Projekt", cnn);
+                SqlCommand projekti = new SqlCommand("SELECT Šifra, Naziv, Opis, PM, Klijent FROM Projekt", cnn);
 
 
                 using (SqlDataReader reader = projekti.ExecuteReader())
@@ -152,13 +152,10 @@ namespace RadniSati.Controllers
                     while (reader.Read())
                     {
                         //Debug.WriteLine(String.Format("{0}, {1}, {2}, {3}", reader[0].ToString(), reader[1].ToString(), reader[2].ToString(),reader[3]).ToString());
-                   
-                        TempData["nazivProjekta"] = reader[0].ToString(); //opis
-                        TempData["opisProjekta"] = reader[1].ToString(); //naziv
-                        TempData["pmProjekta"] = reader[2].ToString(); //PM
-                        TempData["klijentProjekta"] = reader[3].ToString(); //klijent-naručitelj
+                    
+                    
                      
-                        ListaProjekata.Add(new Projekt(reader[0].ToString(), reader[1].ToString(), reader[2].ToString(), reader[3].ToString()));
+                        ListaProjekata.Add(new Projekt(Int32.Parse(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(),reader[4].ToString()));
                         
                     }
 
@@ -262,6 +259,30 @@ namespace RadniSati.Controllers
             return View();
         }
 
+
+        public ActionResult DetaljiProjekt()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ViewResult DetaljiProjekt(FormCollection form, int id, string naziv, string opis, string pm, string klijent)
+        {
+
+            var idProjekt = id;
+            var Naziv = naziv;
+            var Opis = opis;
+            var PM = pm;
+            var Klijent = klijent;
+            Debug.WriteLine(idProjekt);
+            Debug.WriteLine(Naziv);
+            ViewBag.id = idProjekt;
+            ViewBag.naziv = Naziv;
+            ViewBag.opis = Opis;
+            ViewBag.pm = PM;
+            ViewBag.klijent = Klijent;
+            return View();
+        }
 
 
 

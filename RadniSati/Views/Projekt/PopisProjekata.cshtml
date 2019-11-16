@@ -21,18 +21,21 @@
         margin: 20px 0px 20px 0px;
     }
 
-    table, td, th {
-        border: 1px solid #ddd;
-        text-align: left;
+
+
+
+    input[type=submit] {
+        background-color: #0094ff;
+        color: white;
+        margin: 0px 10px 0px 10px;
+        border-width: 0px;
+        border: none;
     }
 
-    table {
-        border-collapse: collapse;
-        width: 100%;
-    }
+    span[class="glyphicon glyphicon-lock"], 
+    span[class="glyphicon glyphicon-backward"] 
+    { margin: 0px 10px 0px 10px;
 
-    th, td {
-        padding: 10px 10px;
     }
 </style>
 
@@ -48,55 +51,57 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="~/Izbornik/Izbornik">Izbornik</a></li>
                     <li class="breadcrumb-item"><a href="~/Projekt/Index">Projekt</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">IzmjenaProjekata</li>
+                    <li class="breadcrumb-item active" aria-current="page">Popis projekata</li>
                 </ol>
             </nav>
         </div>
     </div>
 
-    <h3>U nastavku popis projekata</h3>
-
-
-    <div class="row">
-        <div class="col-sm-6">
-
-            <table>
-                <tr>
-                    <th> @Html.DisplayNameFor(model => model.Naziv)</th>
-                    <th> @Html.DisplayNameFor(model => model.Opis)</th>
-                    <th> @Html.DisplayNameFor(model => model.PM)</th>
-                    <th> @Html.DisplayNameFor(model => model.Klijent)</th>
-                </tr>
-                @foreach (var item in Model)
-                {
-                    <tr>
-
-
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Naziv)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Opis)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PM)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Klijent)
-                        </td>
-
-                    </tr>
-                }
-            </table>
 
 
 
-        </div>
-        <div class="col-sm-6"></div>
+    <h3>Izaberi projekt</h3>
 
-    </div>
+    <hr />
+</div>
 
+
+
+
+<div class="container-fluid">
+
+
+
+    @foreach (var item in Model)
+    {
+        using (Html.BeginForm("DetaljiProjekt", "Projekt", new { id = item.Sifra, naziv = item.Naziv, opis =item.Opis, pm=item.PM, klijent = item.Klijent }, FormMethod.Post))
+        {
     <p>
-        @Html.ActionLink("Povratak", "Index", "Projekt")
+
+        <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+
+
+        @Html.DisplayFor(modelItem => item.Naziv)
+
+
+
+        <input type="submit" value="Detalji" />
+
+
+
+
+
     </p>
+        }
+
+
+    }
+            <p>
+
+                <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+
+                @Html.ActionLink("Povratak", "Index", "Projekt")
+
+            </p>
+
 </div>
