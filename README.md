@@ -4,16 +4,23 @@
 **Login into your account:**
 
 For example:
+
 Username: dragonrossa
+
 Password: rosa1
 
 **Options:**
 
 Timesheet
+
 Projekt
+
 Ticket
+
 Task
+
 Employees
+
 Search
 
 **Timesheet**
@@ -37,6 +44,7 @@ Add some task to projekt or some employee.
 **Employees**
 
 Add new or delete existing employees.
+
 Give them roles etc.
 
 
