@@ -8,11 +8,11 @@ This is overtime work timesheet with projects, ticketing system, task, employees
 **Login into your account:**
 
 For example:
+```
+Username: dragonrossa
 
-- Username: dragonrossa
-
-- Password: rosa1
-
+Password: rosa1
+```
 **Options:**
 
 - Timesheet
@@ -59,6 +59,8 @@ Give them roles etc.
 ## I dont understand this project!
 
 If you need help for using this app please contact me on rodjuga@gmail.com
+
+Or contact me on my [LinkedIn](https://www.linkedin.com/in/rosana-%C4%91uga-3b1826bb/)
 
 (Work in progres - Timesheet and Projekt almost done)
 
