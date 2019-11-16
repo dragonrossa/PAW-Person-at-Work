@@ -56,6 +56,8 @@ Add new or delete existing employees.
 Give them roles etc.
 
 
+## I dont understand this project!
+
 If you need help for using this app please contact me on rodjuga@gmail.com
 
 (Work in progres - Timesheet and Projekt almost done)
