@@ -1,13 +1,15 @@
 # PAW - Person at Work 
 **CRM for personal or commercial use**
 
+This is overtime work timesheet with projects, ticketing system, task, employees and others.
+
 **Login into your account:**
 
 For example:
 
-Username: dragonrossa
+- Username: dragonrossa
 
-Password: rosa1
+- Password: rosa1
 
 **Options:**
 
