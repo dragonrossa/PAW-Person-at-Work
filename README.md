@@ -1,11 +1,11 @@
-#PAW - Person at Work (CRM for personal or commercial use)
+# PAW - Person at Work (CRM for personal or commercial use)
 
-Login into your account:
+**Login into your account:**
 For example:
 Username: dragonrossa
 Password: rosa1
 
-#Options:
+**Options:**
 Timesheet
 Projekt
 Ticket
@@ -13,25 +13,20 @@ Task
 Employees
 Search
 
-#Timesheet
-
+**Timesheet**
 Ever wondered how much overtime work you have every day?
 Here is your private timesheet for those days.
 
-#Projekt
-
+**Projekt**
 Insert some projekt and change those details.
 
-#Ticket
-
+**Ticket**
 Create ticket for some employee (depends on the role he/she has).
 
-#Task
-
+**Task**
 Add some task to projekt or some employee.
 
-#Employees
-
+**Employees**
 Add new or delete existing employees.
 Give them roles etc.
 
