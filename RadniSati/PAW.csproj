@@ -142,6 +142,7 @@
     <Content Include="Views\Projekt\IzmjenaProjekata.cshtml" />
     <Content Include="Views\Projekt\IzmijeniProjekt.cshtml" />
     <Content Include="Views\Projekt\DetaljiProjekt.cshtml" />
+    <Content Include="Views\Projekt\ProjektReport.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

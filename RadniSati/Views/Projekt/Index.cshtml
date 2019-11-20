@@ -9,11 +9,10 @@
     h2 {
         margin: 20px 0px 20px 0px;
     }
-    span[class="glyphicon glyphicon-cog"], 
-    span[class="glyphicon glyphicon-backward"] 
-                { 
-        margin: 5px 5px 5px 5px; 
-
+    span[class="glyphicon glyphicon-cog"],
+    span[class="glyphicon glyphicon-backward"],
+    span[class ="glyphicon glyphicon-stats"] {
+        margin: 5px 5px 5px 5px;
     }
 </style>
 
@@ -41,13 +40,20 @@
         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
         @Html.ActionLink("Upis projekta", "UpisProjekta", "Projekt")
     </p>
-    <p><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+    <p>
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
         @Html.ActionLink("Popis projekata", "PopisProjekata", "Projekt")
     </p>
-    <p><span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+    <p>
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
         @Html.ActionLink("Izmjena projekata", "IzmjenaProjekata", "Projekt")
     </p>
-    <p><span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+    <p>
+        <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+        @Html.ActionLink("Reports", "ProjektReport", "Projekt")
+    </p>
+    <p>
+        <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
         @Html.ActionLink("Povratak", "Izbornik", "Izbornik")
     </p>
 </div>
