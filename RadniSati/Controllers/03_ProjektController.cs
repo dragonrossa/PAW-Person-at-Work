@@ -272,6 +272,7 @@ namespace RadniSati.Controllers
             ViewBag.drzava1 = drzava;
             ViewBag.ime1 = ime;
             ViewBag.prezime1 = prezime;
+            TempData["idProjekta"] = id;
 
 
             Debug.WriteLine(id);
@@ -289,6 +290,8 @@ namespace RadniSati.Controllers
             Debug.WriteLine(drzava);
             Debug.WriteLine(ime);
             Debug.WriteLine(prezime);
+
+            
 
 
             return View();
@@ -319,7 +322,55 @@ namespace RadniSati.Controllers
             return View();
         }
 
+        [HttpPost]
 
+        public ViewResult ProjektIzmijenjen(FormCollection form)
+        {
+            try
+            {
+
+
+                cnn = new SqlConnection(connectionString: RadniSati.ConnectionString);
+                cnn.Open();
+
+                SqlCommand unos = new SqlCommand("UPDATE dbo.Projekt SET Naziv = @naziv, Opis = @opis, PM = @pm, Task = @task, Rezultat = @rezultat, Koordinator = @koordinator, Klijent= @klijent, Pocetak = @pocetak, Kraj = @kraj, Datum = @datum,Budget = @budget, Drzava = @drzava, ImeZaposlenika = @ime, PrezimeZaposlenika = @prezime WHERE Šifra=@id;", cnn);
+
+                unos.Parameters.Add("@id", SqlDbType.Int).Value = TempData["idProjekta"];
+                unos.Parameters.Add("@naziv", SqlDbType.NChar).Value = form["naziv"];
+                unos.Parameters.Add("@opis", SqlDbType.Text).Value = form["opis"];
+                unos.Parameters.Add("@pm", SqlDbType.NChar).Value = form["pm"];
+                unos.Parameters.Add("@task", SqlDbType.NChar).Value = form["task"];
+                unos.Parameters.Add("@rezultat", SqlDbType.NChar).Value = form["rezultat"];
+                unos.Parameters.Add("@koordinator", SqlDbType.NChar).Value = form["koordinator"];
+                unos.Parameters.Add("@klijent", SqlDbType.NChar).Value = form["klijent"];
+                unos.Parameters.Add("@pocetak", SqlDbType.DateTime).Value = form["pocetak"];
+                unos.Parameters.Add("@kraj", SqlDbType.DateTime).Value = form["kraj"];
+                unos.Parameters.Add("@datum", SqlDbType.Date).Value = form["datum"];
+                unos.Parameters.Add("@budget", SqlDbType.Money).Value = form["budget"];
+                unos.Parameters.Add("@drzava", SqlDbType.NChar).Value = form["drzava"];
+                unos.Parameters.Add("@ime", SqlDbType.NChar).Value = form["ime"];
+                unos.Parameters.Add("@prezime", SqlDbType.NChar).Value = form["prezime"];
+
+                unos.ExecuteNonQuery();
+
+
+
+                cnn.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
+            finally
+            {
+
+                Debug.WriteLine("Podaci upisani!");
+            }
+            return View("IzmijeniProjekt");
+        }
 
     }
 

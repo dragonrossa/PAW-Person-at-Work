@@ -28,6 +28,9 @@
 </script>
 
 
+@using (Html.BeginForm("ProjektIzmijenjen", "Projekt", FormMethod.Post))
+{
+
 
 <div class="container">
     <h2>Izmijeni informacije o projektu</h2>
@@ -45,21 +48,21 @@
 
     <p>
         Naziv projekta
-  
+
 
     </p>
     <p> <input type="text" value="@ViewBag.naziv1" name="naziv" id="naziv" placeholder="@ViewBag.naziv1" style="width:500px;"></p>
 
     <p>
         Opis projekta
-    
+
 
     </p>
     <p> <input type="text" value="@ViewBag.opis1" name="opis" id="opis" placeholder="@ViewBag.opis1" style="width:500px;"></p>
 
     <p>
         PM projekta
- 
+
 
     </p>
     <p> <input type="text" value="@ViewBag.pm1" name="pm" id="pm" placeholder="@ViewBag.pm1" style="width:500px;"></p>
@@ -73,14 +76,14 @@
 
     <p>
         Task projekta
- 
+
 
     </p>
-    <p> <input type="text" value="@ViewBag.task1" name="task" id="task" placeholder="@ViewBag.task1"  style="height:100px; width:500px;"></p>
+    <p> <input type="text" value="@ViewBag.task1" name="task" id="task" placeholder="@ViewBag.task1" style="height:100px; width:500px;"></p>
 
     <p>
         Rezultat projekta
-   
+
 
     </p>
     <p> <input type="text" value="@ViewBag.rezultat1" name="rezultat" id="rezultat" placeholder="@ViewBag.rezultat1" style="width:500px;"></p>
@@ -94,14 +97,14 @@
 
     <p>
         Pocetak projekta
- 
+
 
     </p>
     <p> <input type="text" value="@ViewBag.pocetak1" name="pocetak" id="pocetak" placeholder="@ViewBag.pocetak1" style="width:500px;"></p>
 
     <p>
         Kraj projekta
- 
+
 
     </p>
     <p> <input type="text" value="@ViewBag.kraj1" name="kraj" id="kraj" placeholder="@ViewBag.kraj1" style="width:500px;"></p>
@@ -115,43 +118,48 @@
 
     <p>
         Budget projekta
- 
+
 
     </p>
     <p> <input type="text" value="@ViewBag.budget1" name="budget" id="budget" placeholder="@ViewBag.budget1" style="width:500px;"></p>
 
     <p>
         Država projekta
-  
+
 
     </p>
     <p> <input type="text" value="@ViewBag.drzava1" name="drzava" id="drzava" placeholder="@ViewBag.drzava1" style="width:500px;"></p>
 
     <p>
         Ime zaposlenika
-  
+
 
     </p>
     <p> <input type="text" value="@ViewBag.ime1" name="ime" id="ime" placeholder="@ViewBag.ime1" style="width:500px;"></p>
 
     <p>
         Prezime zaposlenika projekta
-    
+
 
 
     </p>
     <p> <input type="text" value="@ViewBag.prezime1" name="prezime" id="prezime" placeholder="@ViewBag.prezime1" style="width:500px;"></p>
 
 
-  
 
-    <button type="submit" value="Upisi">Upisi</button>
+
+    <button type="submit" value="Upiši izmjenu">Upiši izmjenu</button>
+
+
+
 
     <p>
         @Html.ActionLink("Povratak", "IzmjenaProjekata", "Projekt")
     </p>
 
 
-
 </div>
+
+}
+
 
