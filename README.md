@@ -17,7 +17,7 @@ Password: rosa1
 
 - Timesheet
 
-- Projekt
+- Project
 
 - Ticket
 
@@ -46,7 +46,7 @@ Here are the options for basic user.
 
 **Task**
 
-`Add some task to projekt or some employee.`
+`Add some task to project or some employee.`
 
 **Employees**
 
