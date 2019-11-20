@@ -38,7 +38,7 @@ Here are the options for basic user.
 
 **Projekt**
 
-`Insert some projekt and change those details.`
+`Insert some project and change those details.`
 
 **Ticket**
 
