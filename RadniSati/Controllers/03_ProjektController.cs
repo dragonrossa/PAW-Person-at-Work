@@ -15,6 +15,7 @@ namespace RadniSati.Controllers
         Baza RadniSati = new Baza(@"Data Source=localhost\SQLEXPRESS;Initial Catalog=RadniSati;Integrated Security=True;User ID=ROSANA\rosana;Password=;");
         SqlConnection cnn;
 
+
        private List<Projekt> ListaProjekata = new List<Projekt>();
 
         // GET: Projekt
@@ -71,7 +72,7 @@ namespace RadniSati.Controllers
             TempData["naziv"] = form["Naziv"];
             TempData["opis"] = form["Opis"];
             TempData["pm"] = form["PM"];
-            TempData["task"] = form["PM"];
+            TempData["task"] = form["Task"];
             TempData["rezultat"] = form["Rezultat"];
             TempData["koordinator"] = form["Koordinator"];
             TempData["klijent"] = form["Klijent"];
@@ -92,7 +93,7 @@ namespace RadniSati.Controllers
                 cnn = new SqlConnection(connectionString: RadniSati.ConnectionString);
                 cnn.Open();
 
-                SqlCommand unos = new SqlCommand("INSERT INTO dbo.Projekt VALUES (@naziv,@opis,@pm,@task,@rezultat, @koordinator, @klijent, @pocetak, @kraj, @datum,@budget, @drzava, @imeZaposlenika, @prezimeZaposlenika)", cnn);
+                SqlCommand unos = new SqlCommand("INSERT INTO dbo.Projekt VALUES (@naziv, @opis, @pm, @task, @rezultat, @koordinator, @klijent, @pocetak, @kraj, @datum,@budget, @drzava, @imeZaposlenika, @prezimeZaposlenika)", cnn);
 
                 unos.Parameters.Add("@naziv", SqlDbType.NChar).Value = TempData["naziv"];
                 unos.Parameters.Add("@opis", SqlDbType.Text).Value = TempData["opis"];

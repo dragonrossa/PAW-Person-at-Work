@@ -1,0 +1,22 @@
+ALTER TABLE Projekt
+ADD CONSTRAINT  ŠifraProjekta PRIMARY KEY (Šifra)
+
+
+CREATE TABLE Zaposlenici(
+ŠifraZaposlenika int PRIMARY KEY IDENTITY(1,1),
+Ime varchar(20),
+Prezime varchar(20),
+Adresa varchar(50),
+PoštanskiBroj int,
+Grad varchar(20),
+Mail varchar(30),
+Mobitel int,
+Telefon int,
+Lokacija varchar(30),
+Odjel varchar(30),
+RadnaPozicija varchar(30),
+LoginZap bit,
+ŠifraProjekta int,
+Ostalo text,
+FOREIGN KEY(ŠifraProjekta) REFERENCES Projekt(Šifra)
+)

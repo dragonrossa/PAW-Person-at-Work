@@ -118,6 +118,7 @@
     <Compile Include="Models\Baza.cs" />
     <Compile Include="Models\Projekt.cs" />
     <Compile Include="Models\Sati.cs" />
+    <Compile Include="Models\Zaposlenici.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -145,6 +146,11 @@
     <Content Include="Views\Projekt\ProjektReport.cshtml" />
     <Content Include="Views\Projekt\IzbrisiProjekt.cshtml" />
     <Content Include="Views\Projekt\IzbrisanProjekt.cshtml" />
+    <Content Include="Views\Zaposlenici\UpisZaposlenika.cshtml" />
+    <Content Include="Views\Zaposlenici\IzmjenaZaposlenika.cshtml" />
+    <Content Include="Views\Zaposlenici\IzbrisiZaposlenika.cshtml" />
+    <Content Include="Views\Zaposlenici\PopisZaposlenika.cshtml" />
+    <Content Include="Views\Zaposlenici\ZaposleniciReport.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

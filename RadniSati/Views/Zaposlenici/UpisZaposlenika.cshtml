@@ -1,0 +1,257 @@
+﻿
+@{
+    ViewBag.Title = "UpisZaposlenika";
+ 
+
+}
+
+
+
+<style>
+    form {
+        margin: 20px 0px;
+    }
+
+    .no-gutters {
+        margin: 0px 0px;
+    }
+
+    h2 {
+        margin: 20px 0px 20px 0px;
+    }
+</style>
+
+
+<div class="container">
+
+   
+   
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            alert("Podaci o korisniku upisani su bazu!");
+        });
+    });
+
+</script>
+
+
+<div class="container">
+
+
+
+    <h2>Upis novog zaposlenika</h2>
+
+
+
+    <div class="row no-gutters">
+        <div class="col-10 col-sm-4 col-md-4" style="padding:0px;">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="~/Izbornik/Izbornik">Izbornik</a></li>
+                    <li class="breadcrumb-item"><a href="~/Zaposlenici/Index">Zaposlenici</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Upis zaposlenika</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+
+    @using (Html.BeginForm("UpisZaposlenika", "Zaposlenici", FormMethod.Post))
+    {
+
+    <form>
+
+        <h3>Novi zaposlenik</h3>
+
+        <!--1-->
+        <hr />
+        <div class="form-group row">
+            <label for="Ime" class="col-sm-2 col-form-label">Ime</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Ime" placeholder="" name="Ime">
+
+            </div>
+        </div>
+
+
+        <!--2-->
+
+        <div class="form-group row">
+            <label for="Prezime" class="col-sm-2 col-form-label">Prezime</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Prezime" placeholder="" name="Prezime">
+            </div>
+        </div>
+
+        <!--3-->
+
+        <div class="form-group row">
+            <label for="Adresa" class="col-sm-2 col-form-label">Adresa</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Adresa" placeholder="" name="Adresa">
+            </div>
+        </div>
+
+        <!--4-->
+
+        <div class="form-group row">
+            <label for="PoštanskiBroj" class="col-sm-2 col-form-label">Poštanski broj</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="PoštanskiBroj" placeholder="" name="PoštanskiBroj">
+            </div>
+        </div>
+
+
+        <!--5-->
+
+        <div class="form-group row">
+            <label for="Grad" class="col-sm-2 col-form-label">Grad</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Grad" placeholder="" name="Grad">
+            </div>
+        </div>
+
+        <!--6-->
+
+        <div class="form-group row">
+            <label for="Mail" class="col-sm-2 col-form-label">Mail</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Mail" placeholder="" name="Mail">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <label for="Mobitel" class="col-sm-2 col-form-label">Mobitel</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="Mobitel" placeholder="" name="Mobitel">
+            </div>
+        </div>
+
+
+        <!--7-->
+
+        <div class="form-group row">
+            <label for="Telefon" class="col-sm-2 col-form-label">Telefon</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="Telefon" placeholder="" name="Telefon">
+            </div>
+        </div>
+
+
+        <!--8-->
+        <div class="form-group row">
+            <label for="Lokacija" class="col-sm-2 col-form-label">Lokacija</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Lokacija" name="Lokacija">
+
+            </div>
+        </div>
+        <!--9-->
+        <div class="form-group row">
+            <label for="Odjel" class="col-sm-2 col-form-label">Odjel</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Odjel" name="Odjel">
+
+            </div>
+        </div>
+        <!--10-->
+        <div class="form-group row">
+            <label for="RadnaPozicija" class="col-sm-2 col-form-label">Radna pozicija</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Datum" name="RadnaPozicija">
+
+            </div>
+        </div>
+
+
+
+        <!--11-->
+        <fieldset class="form-group">
+            <div class="row">
+                <div class="col-form-label col-sm-2 pt-0">Login</div>
+                <div class="col-sm-10">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="LoginZap" id="gridRadios1" value=true checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            Da
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="LoginZap" id="gridRadios2" value=false>
+                        <label class="form-check-label" for="gridRadios2">
+                            Ne
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!--12-->
+
+        <div class="form-group row">
+            <hr />
+            <label for="ŠifraProjekta" class="col-sm-2 col-form-label">Šifra projekta</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="ŠifraProjekta" placeholder="" name="ŠifraProjekta">
+            </div>
+        </div>
+
+        <!--13-->
+
+        <div class="form-group row">
+            <label for="Ostalo" class="col-sm-2 col-form-label">Ostalo</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="Ostalo" placeholder="" name="Ostalo">
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-sm-2">
+
+            </div>
+
+            <div class="col-sm-10">
+                <button type="submit" value="Upisi">Upisi</button>
+
+            </div>
+        </div>
+
+
+        <div class="form-group row">
+            <div class="col-sm-2">
+
+            </div>
+
+            <div class="col-sm-10">
+                <p>
+
+                    @Html.ActionLink("Povratak", "Index", "Zaposlenici", new { @style = "margin:20px 0px;" })
+                </p>
+
+            </div>
+        </div>
+
+
+
+
+
+    </form>
+
+    }
+
+
+</div>
+
+
+
+

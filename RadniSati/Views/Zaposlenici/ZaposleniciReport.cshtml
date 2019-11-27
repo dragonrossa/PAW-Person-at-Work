@@ -1,0 +1,77 @@
+﻿@model  IEnumerable<RadniSati.Models.Zaposlenici>
+
+
+
+@{
+    ViewBag.Title = "ZaposleniciReport";
+}
+
+
+<style>
+    h2 {
+        margin: 20px 0px 20px 0px;
+    }
+</style>
+
+
+
+<div class="container">
+
+    <h2>Izvještaj o zaposlenicima</h2>
+
+    <p>
+
+        @Html.ActionLink("Povratak", "Index", "Zaposlenici")
+    </p>
+
+</div>
+
+
+
+<div class="container">
+
+
+    <h2>Izvještaji o zaposlenicima</h2>
+
+    <div class="row no-gutters">
+        <div class="col-10 col-sm-4 col-md-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="~/Izbornik/Izbornik">Izbornik</a></li>
+                    <li class="breadcrumb-item"><a href="~/Zaposlenici/Index">Zaposlenici</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Reports</li>
+                </ol>
+            </nav>
+        </div>
+
+
+    </div>
+
+    <hr />
+    @foreach (var item in Model)
+    {
+    <div class="row">
+        <div class="col-6 col-md-6"><h3>Broj zaposlenika</h3></div>
+        <div class="col-6 col-md-6"><h3>Zaposlenici iz Zagreb</h3></div>
+        <div class="col-6 col-md-6"><p>@Html.DisplayFor(modelItem => item.BrojZaposlenik)</p></div>
+        @*<div class="col-6 col-md-6"><p>@Html.DisplayFor(modelItem => item.brojZaposlenikaIzZagreba)</p></div>*@
+        @*<div class="col-6 col-md-6"><p>@Html.DisplayFor(modelItem => item.ReportUkupanBrojProjekata)</p></div>*@
+        @*<div class="col-6 col-md-6"><p>@Html.DisplayFor(modelItem => item.ReportSumaBudgeta)</p></div>*@
+        @*<div class="col-6 col-md-6"><h3>Najraniji start projekata</h3></div>
+        <div class="col-6 col-md-6"><h3>Najraniji kraj projekata</h3></div>
+        <div class="col-6 col-md-6"><p>@Html.DisplayFor(modelItem => item.ReportPocetakProjekta)</p></div>
+        <div class="col-6 col-md-6"><p>@Html.DisplayFor(modelItem => item.ReportKrajProjekta)</p></div>*@
+    </div>
+    }
+
+
+
+</div>
+
+<div class="container" style="margin:20px 0px 20px 0px">
+
+    <p>
+        @Html.ActionLink("Povratak", "Index", "Projekt")
+    </p>
+
+</div>

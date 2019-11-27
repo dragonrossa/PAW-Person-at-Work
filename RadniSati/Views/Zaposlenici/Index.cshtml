@@ -39,20 +39,25 @@
     <hr />
     <p>
         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-        @Html.ActionLink("Upis novog zaposlenika", "UpisProjekta", "Projekt")
+        @Html.ActionLink("Upis novog zaposlenika", "UpisZaposlenika", "Zaposlenici")
     </p>
     <p>
         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-        @Html.ActionLink("Popis svih zaposlenika", "PopisProjekata", "Projekt")
+        @Html.ActionLink("Izmjena zaposlenika", "IzmjenaZaposlenika", "Zaposlenici")
     </p>
     <p>
         <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-        @Html.ActionLink("Izmjena podataka o zaposleniku", "IzmjenaProjekata", "Projekt")
+        @Html.ActionLink("Brisanje zaposlenika", "IzbrisiZaposlenika", "Zaposlenici")
+    </p>
+    <p>
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+        @Html.ActionLink("Popis zaposlenika", "PopisZaposlenika", "Zaposlenici")
     </p>
     <p>
         <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
-        @Html.ActionLink("Brisanje zaposlenika", "ProjektReport", "Projekt")
+        @Html.ActionLink("Reports", "ZaposleniciReport", "Zaposlenici")
     </p>
+
     <p>
         <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
         @Html.ActionLink("Povratak", "Izbornik", "Izbornik")
