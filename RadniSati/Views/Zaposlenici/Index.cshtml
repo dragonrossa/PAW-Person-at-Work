@@ -3,9 +3,58 @@
     ViewBag.Title = "Index";
 }
 
+
+<style>
+
+    h2 {
+        margin: 20px 0px 20px 0px;
+    }
+
+    span[class="glyphicon glyphicon-cog"],
+    span[class="glyphicon glyphicon-backward"],
+    span[class ="glyphicon glyphicon-stats"] {
+        margin: 5px 5px 5px 5px;
+    }
+</style>
+
+
 <div class="container">
-    <h2>Index</h2>
+    <h2>Zaposlenici</h2>
+
+    <div class="row no-gutters">
+        <div class="col-10 col-sm-4 col-md-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="~/Prijava/Index">Index</a></li>
+                    <li class="breadcrumb-item"><a href="~/Izbornik/Izbornik">Izbornik</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Zaposlenici</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+    <h3>Izaberi iz izbornika:</h3>
+    <hr />
     <p>
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+        @Html.ActionLink("Upis novog zaposlenika", "UpisProjekta", "Projekt")
+    </p>
+    <p>
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+        @Html.ActionLink("Popis svih zaposlenika", "PopisProjekata", "Projekt")
+    </p>
+    <p>
+        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+        @Html.ActionLink("Izmjena podataka o zaposleniku", "IzmjenaProjekata", "Projekt")
+    </p>
+    <p>
+        <span class="glyphicon glyphicon-stats" aria-hidden="true"></span>
+        @Html.ActionLink("Brisanje zaposlenika", "ProjektReport", "Projekt")
+    </p>
+    <p>
+        <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
         @Html.ActionLink("Povratak", "Izbornik", "Izbornik")
     </p>
 </div>

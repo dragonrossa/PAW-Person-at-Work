@@ -1,0 +1,106 @@
+﻿@model  IEnumerable<RadniSati.Models.Projekt>
+
+
+
+@{
+    ViewBag.Title = "IzbrisiProjekt";
+}
+
+
+<style>
+
+    h2 {
+        margin: 20px 0px 20px 0px;
+    }
+
+    h3 {
+        margin: 30px 0px 30px 0px;
+    }
+
+    p {
+        margin: 20px 0px 20px 0px;
+    }
+
+
+
+
+    input[type=submit] {
+        background-color: darkslategrey;
+        color: white;
+        margin: 0px 10px 0px 10px;
+        border-width: 0px;
+        border: none;
+    }
+
+    span[class="glyphicon glyphicon-lock"],
+    span[class="glyphicon glyphicon-backward"] {
+        margin: 0px 10px 0px 10px;
+    }
+</style>
+
+
+
+
+<div class="container">
+    <h2>Izbrisi projekt</h2>
+
+    <div class="row no-gutters">
+        <div class="col-10 col-sm-4 col-md-4">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="~/Izbornik/Izbornik">Izbornik</a></li>
+                    <li class="breadcrumb-item"><a href="~/Projekt/Index">Projekt</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Izbrisi projekt</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
+
+
+    <h3>Izaberi projekt</h3>
+
+    <hr />
+</div>
+
+
+
+
+<div class="container-fluid">
+
+
+
+    @foreach (var item in Model)
+    {
+        using (Html.BeginForm("IzbrisanProjekt", "Projekt", new { id = item.Sifra}, FormMethod.Post))
+        {
+            <p>
+
+                <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+
+
+                @Html.DisplayFor(modelItem => item.Naziv)
+
+
+
+                <input type="submit" value="Izbriši" />
+
+
+
+
+
+            </p>
+        }
+
+
+    }
+    <p>
+
+        <span class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+
+        @Html.ActionLink("Povratak", "Index", "Projekt")
+
+    </p>
+
+</div>

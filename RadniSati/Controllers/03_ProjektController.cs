@@ -423,6 +423,91 @@ namespace RadniSati.Controllers
             return View(ListaProjekata);
         }
 
+        public ActionResult IzbrisiProjekt()
+        {
+
+            try
+            {
+
+
+
+                cnn = new SqlConnection(connectionString: RadniSati.ConnectionString);
+
+                cnn.Open();
+
+                SqlCommand projekti = new SqlCommand("SELECT Šifra, Naziv, Opis, PM, Klijent FROM Projekt", cnn);
+
+
+                using (SqlDataReader reader = projekti.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        //Debug.WriteLine(String.Format("{0}, {1}, {2}, {3}", reader[0].ToString(), reader[1].ToString(), reader[2].ToString(),reader[3]).ToString());
+
+
+
+                        ListaProjekata.Add(new Projekt(Int32.Parse(reader[0].ToString()), reader[1].ToString(), reader[2].ToString(), reader[3].ToString(), reader[4].ToString()));
+
+                    }
+
+
+                }
+
+
+                cnn.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
+            finally
+            {
+
+                Debug.WriteLine("Podaci su OK!");
+            }
+
+
+
+            return View(ListaProjekata);
+
+          
+        }
+
+        [HttpPost]
+        public ActionResult IzbrisanProjekt(FormCollection form, int id)
+        {
+            try
+            {
+
+
+                cnn = new SqlConnection(connectionString: RadniSati.ConnectionString);
+                cnn.Open();
+
+                SqlCommand unos = new SqlCommand("DELETE FROM Projekt WHERE Šifra=@id;", cnn);
+
+                unos.Parameters.Add("@id", SqlDbType.Int).Value = id;
+               
+                unos.ExecuteNonQuery();
+
+                cnn.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex.Message);
+                throw;
+            }
+            finally
+            {
+
+                Debug.WriteLine("Podaci izbrisani!");
+            }
+            return View();
+        }
     }
 
 

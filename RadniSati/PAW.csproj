@@ -143,6 +143,8 @@
     <Content Include="Views\Projekt\IzmijeniProjekt.cshtml" />
     <Content Include="Views\Projekt\DetaljiProjekt.cshtml" />
     <Content Include="Views\Projekt\ProjektReport.cshtml" />
+    <Content Include="Views\Projekt\IzbrisiProjekt.cshtml" />
+    <Content Include="Views\Projekt\IzbrisanProjekt.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
