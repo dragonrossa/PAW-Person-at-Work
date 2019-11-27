@@ -62,3 +62,6 @@ Or contact me on my [LinkedIn](https://www.linkedin.com/in/rosana-%C4%91uga-3b18
 
 (Work in progres - Timesheet and Projekt almost done)
 
+`Info:
+20.11. Projekt - Added Reports`
+
