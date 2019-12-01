@@ -118,6 +118,8 @@
     <Compile Include="Models\Baza.cs" />
     <Compile Include="Models\Projekt.cs" />
     <Compile Include="Models\Sati.cs" />
+    <Compile Include="Models\Task.cs" />
+    <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\Zaposlenici.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
