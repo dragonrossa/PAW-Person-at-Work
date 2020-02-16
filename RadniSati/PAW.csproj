@@ -112,10 +112,12 @@
     <Compile Include="Controllers\04_TicketController.cs" />
     <Compile Include="Controllers\06_ZaposleniciController.cs" />
     <Compile Include="Controllers\00_PrijavaController.cs" />
+    <Compile Include="Controllers\FruitController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Baza.cs" />
+    <Compile Include="Models\FruitModel.cs" />
     <Compile Include="Models\Projekt.cs" />
     <Compile Include="Models\Sati.cs" />
     <Compile Include="Models\Task.cs" />
@@ -153,6 +155,9 @@
     <Content Include="Views\Zaposlenici\IzbrisiZaposlenika.cshtml" />
     <Content Include="Views\Zaposlenici\PopisZaposlenika.cshtml" />
     <Content Include="Views\Zaposlenici\ZaposleniciReport.cshtml" />
+    <Content Include="Views\Zaposlenici\Test.cshtml" />
+    <Content Include="Views\Fruit\Index.cshtml" />
+    <Content Include="Views\Zaposlenici\test3.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

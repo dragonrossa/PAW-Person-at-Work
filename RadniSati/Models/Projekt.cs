@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace RadniSati.Models
 {
@@ -76,6 +77,13 @@ namespace RadniSati.Models
             this.ReportKrajProjekta = KrajProjekta;
         }
 
+        public Projekt(int sifra)
+        {
+            this.Sifra = sifra;
+        }
 
+        public List<SelectListItem> Projektici { get; set; }
+        public int? FruitId { get; set; }
+        public int? Quantity { get; set; }
     }
 }

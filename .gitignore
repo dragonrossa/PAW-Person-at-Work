@@ -261,3 +261,5 @@ __pycache__/
 *.pyc
 /SQLQuery1.sql
 /SQLQuery2.sql
+/RadniSati/Views/Zaposlenici/test3.cshtml
+/RadniSati/Views/Zaposlenici/Test.cshtml

@@ -1,10 +1,12 @@
-﻿
+﻿@model RadniSati.Models.FruitModel
+
+
+
 @{
     ViewBag.Title = "UpisZaposlenika";
- 
+
 
 }
-
 
 
 <style>
@@ -24,8 +26,8 @@
 
 <div class="container">
 
-   
-   
+
+
 </div>
 
 
@@ -64,8 +66,13 @@
 
 
 
+
     @using (Html.BeginForm("UpisZaposlenika", "Zaposlenici", FormMethod.Post))
     {
+
+
+
+
 
     <form>
 
@@ -196,12 +203,61 @@
         </fieldset>
 
         <!--12-->
-
-        <div class="form-group row">
+        @*<div class="form-group row">
             <hr />
             <label for="ŠifraProjekta" class="col-sm-2 col-form-label">Šifra projekta</label>
             <div class="col-sm-10">
                 <input type="number" class="form-control" id="ŠifraProjekta" placeholder="" name="ŠifraProjekta">
+            </div>
+        </div>*@
+
+
+        @*<div class="container" style="margin:20px 0px">
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-5">
+                <p>
+                    Izaberi projekt
+
+                    &nbsp;
+
+                    @Html.DropDownList("ŠifraProjekta", new SelectList(new[] { "1002", "1003", "1004" }), "")
+                </p>
+            </div>
+            <div class="col-sm-5"></div>
+        </div>*@
+
+
+
+        @*<div class="form-group row">
+            <label for="ŠifraProjekta" class="col-sm-2 col-form-label">Izaberi projekt</label>
+            <div class="col-sm-10">
+                @Html.DropDownList("ŠifraProjekta", new SelectList(new[] { "1002", "1003", "1004" }), "")
+            </div>
+        </div>*@
+
+
+        @*<table>
+            <tr>
+                <td>
+                    Projekt:
+                </td>
+                <td>
+
+                    @Html.DropDownListFor(m => m.ProjektId, Model.Projects, "Please select")
+                </td>
+            </tr>
+            <tr>
+
+        </table>*@
+
+
+        <div class="form-group row">
+            <label for="ŠifraProjekta" class="col-sm-2 col-form-label">Izaberi projekt</label>
+            <div class="col-sm-10">
+                @Html.DropDownListFor(m => m.ProjektId, Model.Projects, "", "ŠifraProjekta")
+
             </div>
         </div>
 

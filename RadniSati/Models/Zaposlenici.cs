@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace RadniSati.Models
 {
@@ -61,6 +62,18 @@ namespace RadniSati.Models
             //this.BrojZaposlenikaIzZagreba = broj2;
         }
 
-        
+        //public Zaposlenici(int sifraProjekta,int broj)
+        //{
+        //    this.SifraProjekta = sifraProjekta;
+        //    this.BrojZaposlenik = broj;
+        //}
+
+        public class FruitModel
+        {
+            public List<SelectListItem> Projects { get; set; }
+            public int? ProjektId { get; set; }
+
+        }
+
     }
 }
